@@ -6,7 +6,6 @@ import "../styles.css"
 
 export const Header = ({handleToggleSidebar}) => {
     return (<>
-        {console.log("from header")}
         <div className="container container-header">
             <FaBars className="header-hamburger" size={26} onClick={() => handleToggleSidebar()}/>
             <FcVideoProjector className="header-brand" size={50} />
@@ -14,7 +13,7 @@ export const Header = ({handleToggleSidebar}) => {
                 <input type="text" placeholder="Search" />
                 <button type="submit"> <FiSearch size={22} /> </button>
             </form>
-            <img className="header-avatar" src={avatar} alt="avatar" />
+            <img className="img-40 bdr-rad-round" src={avatar} alt="avatar" />
         </div>
     </>)
 }

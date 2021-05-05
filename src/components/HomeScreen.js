@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
+import { CategoriesBar } from ".";
 import { videoData } from "../data/videos";
 import "../styles.css"
-import { CategoriesBar } from "./CategoriesBar"
 
 export const HomeScreen = ({sidebar}) => {
     return(<>

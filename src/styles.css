@@ -6,6 +6,7 @@
     --color-secondary-black: #181818;
     --color-text: #FFFBEB;
     --color-border: #4c4c4c;
+    --z-index-999: 999;
 }
 
 * {
@@ -111,13 +112,6 @@ body {
     background: transparent;
     border: none; 
 }
-
-.header-avatar {
-    border-radius: 50%;
-    height: 40px;
-    width: 40px;
-}
-
 @media screen and (max-width: 600px) {
     .container-header {
         justify-content: space-evenly;
@@ -206,7 +200,7 @@ body {
     .sidebar {
         transform: translateX(-120%);
         position: fixed;
-        z-index: 999;
+        z-index: var(--z-index-999);
     }
     .sidebar hr {
         display: none;
