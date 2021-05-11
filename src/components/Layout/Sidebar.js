@@ -3,7 +3,7 @@ import { RiHomeLine, RiHistoryLine, RiHeartFill } from "react-icons/ri";
 import { MdVideoLibrary } from "react-icons/md";
 import { GiFlamer } from "react-icons/gi";
 import { BiLogOut } from "react-icons/bi";
-import { useLogin } from "../components/Login/login-context";
+import { useLogin } from "../Login/login-context";
 import { NavLink } from "react-router-dom";
 
 export const Sidebar = ({sidebar, handleToggleSidebar}) => {

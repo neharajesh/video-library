@@ -1,5 +1,5 @@
-import { Header } from ".";
-import { Sidebar } from ".";
+import { Header } from "./Header";
+import { Sidebar } from "./Sidebar";
 import "../styles.css"
 import { useState } from "react";
 
