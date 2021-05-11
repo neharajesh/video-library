@@ -1,9 +1,9 @@
-import { HomeScreen } from "./components/HomeScreen";
+import { HomeScreen } from "./components";
 import { LoginScreen } from "./components/Login/LoginScreen";
 import "./styles.css"
 import { Route, Routes } from "react-router";
-import { Page } from "./components/Page";
-import { VideoPlayer } from "./components/VideoPlayer";
+import { Page } from "./components";
+import { VideoPlayer } from "./components";
 
 function App() {
   return (

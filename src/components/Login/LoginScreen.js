@@ -1,5 +1,5 @@
 import { FcVideoProjector } from "react-icons/fc";
-import { Page } from "../Page";
+import { Page } from "../Layout/Page";
 import "../../styles.css"
 import { useLogin } from "./login-context";
 

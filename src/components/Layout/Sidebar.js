@@ -1,4 +1,4 @@
-import "../styles.css"
+import "../../styles.css"
 import { RiHomeLine, RiHistoryLine, RiHeartFill } from "react-icons/ri"; 
 import { MdVideoLibrary } from "react-icons/md";
 import { GiFlamer } from "react-icons/gi";

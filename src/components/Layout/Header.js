@@ -1,8 +1,8 @@
 import { FaBars } from 'react-icons/fa';
 import { FiSearch } from "react-icons/fi";
 import { FcVideoProjector } from "react-icons/fc";
-import avatar from "../images/avatar.jpg"
-import "../styles.css"
+import avatar from "../../images/avatar.jpg"
+import "../../styles.css"
 
 export const Header = ({handleToggleSidebar}) => {
     return (<>

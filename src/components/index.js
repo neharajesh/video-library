@@ -1,4 +1,4 @@
-import { Page } from "./Page";
+import { Page } from "./Layout/Page";
 import { VideoPlayer } from "./VideoPlayer";
 import { HomeScreen } from "./HomeScreen";
 import { Sidebar } from "./Layout/Sidebar";
