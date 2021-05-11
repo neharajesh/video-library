@@ -6,6 +6,7 @@ import { Page } from "./components";
 import { VideoPlayer } from "./components";
 import { WatchLater } from "./components/WatchLater/WatchLater";
 import { History } from "./components/VideoHistory/History";
+import { LikedVideos } from "./components/LikedVideos/LikedVideos";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/search"><Page><h1>Search Results</h1></Page></Route>
       <Route path="/watchlater"><Page><WatchLater/></Page></Route>
       <Route path="/history"><Page><History /></Page></Route>
+      <Route path="/liked"><Page><LikedVideos /></Page></Route>
     </Routes>
   );
 }

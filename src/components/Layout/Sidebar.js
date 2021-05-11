@@ -13,25 +13,25 @@ export const Sidebar = ({sidebar, handleToggleSidebar}) => {
             <nav className={sidebar ? "sidebar open" : "sidebar"}
             onClick={() => handleToggleSidebar()}
             >
-                <NavLink exact to="/" activeClassName="nav-active">
+                <NavLink exact to="/" className="nav-link" activeClassName="nav-active">
                     <RiHomeLine size={26} /> <span>Home</span>
                 </NavLink>
-                <li>
+                <li className="nav-link">
                     <GiFlamer size={26} /> <span>Top Videos</span>
                 </li>
-                <li>
+                <li className="nav-link">
                     <MdVideoLibrary size={26} /> <span>Library</span>
                 </li>
-                <NavLink to="/history" className="txt-deco-none txt-white" activeClassName="nav-active">
+                <NavLink to="/history" className="nav-link txt-deco-none txt-white" activeClassName="nav-active">
                     <RiHistoryLine size={26} /> <span>History</span>
                 </NavLink>
-                <li>
+                <NavLink to="/liked" className="nav-link txt-deco-none txt-white" activeClassName="nav-active">
                     <RiHeartFill size={26} /> <span>Liked Videos</span>
-                </li>               
+                </NavLink>               
 
                 <hr />
 
-                <li>
+                <li className="nav-link">
                     <BiLogOut size={26} onClick={() => setLogin(false)}/> <span>Logout</span>
                 </li>                
 

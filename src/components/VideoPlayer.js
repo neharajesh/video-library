@@ -1,19 +1,27 @@
 import { useEffect } from "react";
 import ReactPlayer from "react-player";
 import { useParams } from "react-router"
+import { useLikedVideos } from "../context/liked-videos-context";
 import { useVideoHistory } from "../context/video-history-context";
 import { videoData } from "../data/videos"
 import { addToHistory } from "./Utilities/history-utilities";
+import { addToLikedVideos } from "./Utilities/liked-video-utilities";
 
 export const VideoPlayer = () => {
     const { videoId } = useParams();
     const video = videoData.find(video => video.id === videoId);
     const {videoHistoryList, setVideoHistoryList} = useVideoHistory();
+    const {likedVideosList, setLikedVideosList} = useLikedVideos();
 
     useEffect(() => {
         const updatedList = addToHistory(video, videoHistoryList);
         setVideoHistoryList(updatedList);
     }, [])    
+
+    const likedVideoHandler = () => {
+        const updatedLikedVideos = addToLikedVideos(videoId, likedVideosList);
+        setLikedVideosList(updatedLikedVideos);
+    }
 
     return (<>
         <div className="flex-col w-100 h-auto mg-l-2">
@@ -23,6 +31,7 @@ export const VideoPlayer = () => {
                     <div className="txt-xl mg-tb-1">{video.name}</div>
                     <p>Release Date: <span className="txt-700">{video.uploadDate}</span></p>
                     <p>Duration: <span className="txt-700">{video.duration}</span></p>
+                    <button onClick={likedVideoHandler}>Add to Liked Videos</button>
                 </div> 
             </div>   
             <div className="h-100 w-100 flex-self-center">
