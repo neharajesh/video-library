@@ -1,10 +1,20 @@
+import { useEffect } from "react";
 import ReactPlayer from "react-player";
 import { useParams } from "react-router"
+import { useVideoHistory } from "../context/video-history-context";
 import { videoData } from "../data/videos"
+import { addToHistory } from "./Utilities/history-utilities";
 
 export const VideoPlayer = () => {
     const { videoId } = useParams();
-    const video = videoData.find(item => item.id === videoId);
+    const video = videoData.find(video => video.id === videoId);
+    const {videoHistoryList, setVideoHistoryList} = useVideoHistory();
+
+    useEffect(() => {
+        const updatedList = addToHistory(video, videoHistoryList);
+        setVideoHistoryList(updatedList);
+    }, [])    
+
     return (<>
         <div className="flex-col w-100 h-auto mg-l-2">
             <div className="w-100 flex mg-tb-1">

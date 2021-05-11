@@ -1,5 +1,3 @@
 export const WatchLater = () => {
-    return(<>
-        <h1>Watch Later Page!</h1>
-    </>)
+    return <h1>Watch Later</h1>
 }

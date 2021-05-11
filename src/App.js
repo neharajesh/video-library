@@ -4,6 +4,8 @@ import "./styles.css"
 import { Route, Routes } from "react-router";
 import { Page } from "./components";
 import { VideoPlayer } from "./components";
+import { WatchLater } from "./components/WatchLater/WatchLater";
+import { History } from "./components/VideoHistory/History";
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Route exact path="/video/:videoId"><Page><VideoPlayer/></Page></Route>
       <Route path="/login"><LoginScreen /></Route>
       <Route path="/search"><Page><h1>Search Results</h1></Page></Route>
+      <Route path="/watchlater"><Page><WatchLater/></Page></Route>
+      <Route path="/history"><Page><History /></Page></Route>
     </Routes>
   );
 }

@@ -28,7 +28,6 @@ export const HomeScreen = ({sidebar}) => {
                                 <p className="txt-500">{video.channelName}</p>
                             </div>
                             <Link to={`/video/${video.id}`}> <button className="pd-05 mg-05 bdr-thick bdr-yellow bdr-rad-m btn btn-secondary-yellow">Watch Now!</button> </Link>
-                            
                         </div>
                     </div>
                 ))}

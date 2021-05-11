@@ -1,4 +1,4 @@
-import "../../styles.css"
+import "./page.css"
 import { RiHomeLine, RiHistoryLine, RiHeartFill } from "react-icons/ri"; 
 import { MdVideoLibrary } from "react-icons/md";
 import { GiFlamer } from "react-icons/gi";
@@ -22,9 +22,9 @@ export const Sidebar = ({sidebar, handleToggleSidebar}) => {
                 <li>
                     <MdVideoLibrary size={26} /> <span>Library</span>
                 </li>
-                <li>
+                <NavLink to="/history" className="txt-deco-none txt-white" activeClassName="nav-active">
                     <RiHistoryLine size={26} /> <span>History</span>
-                </li>
+                </NavLink>
                 <li>
                     <RiHeartFill size={26} /> <span>Liked Videos</span>
                 </li>               
