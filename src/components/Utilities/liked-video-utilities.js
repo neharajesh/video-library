@@ -1,8 +1,6 @@
 export const addToLikedVideos = (videoId, likedVideosList, videoList) => { 
-    console.log("Adding to liked videos - from utilities")
     const existingVideo = likedVideosList.find(video => video.videoId === videoId);
     if(!existingVideo) {
-        console.log("video not found in liked videos list")
         const video = videoList.find(video => video.videoId === videoId);
         const updatedLikedVideos = [...likedVideosList, video]
         return updatedLikedVideos;        
@@ -16,6 +14,6 @@ export const removeFromLikedVideos = (videoId, likedVideosList) => {
     if(!existingVideo) {
         return likedVideosList;
     }
-    const updatedLikedVideos = likedVideosList.filter(video => video.id === videoId);
+    const updatedLikedVideos = likedVideosList.filter(video => video.videoId !== videoId);
     return updatedLikedVideos;
 }

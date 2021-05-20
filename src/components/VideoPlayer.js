@@ -15,10 +15,10 @@ export const VideoPlayer = () => {
     const {videoHistoryList, setVideoHistoryList} = useVideoHistory();
     const {likedVideosList, setLikedVideosList} = useLikedVideos();
 
-    // useEffect(() => {
-    //     const updatedList = addToHistory(video, videoHistoryList);
-    //     setVideoHistoryList(updatedList);
-    // }, [])    
+    useEffect(() => {
+        const updatedList = addToHistory(video, videoHistoryList);
+        setVideoHistoryList(updatedList);
+    }, [])    
 
     const likedVideoHandler = (videoId, likedVideosList) => {
         showNotification("Video Liked")
@@ -29,7 +29,6 @@ export const VideoPlayer = () => {
     return (<>
         <div className="flex-col w-100 h-auto mg-l-2">
             <div className="w-100 flex mg-tb-1">
-                {/* <img className="img-xs mg-t-1 mg-l-1 bdr-rad-round mg-r-1" src={video.channelImage} alt="❤" /> */}
                 <div className="flex-col mg-l-1">
                     <div className="txt-xl mg-tb-1">{video.title}</div>
                     <p>Release Date: <span className="txt-700">{video.uploadDate}</span></p>
