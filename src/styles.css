@@ -28,6 +28,9 @@ body {
     /* scrollbar-width: none; */
 }
 
+/* Utilities */
+.w-40 { width: 40%; }
+
 .container-app {
     display: flex;
     height: 90vh;
@@ -119,6 +122,11 @@ body {
     color: var(--color-text);
     background: var(--color-secondary-black);
     border-radius: 2px;
+}
+
+.link-text {
+    text-align: center;
+    font-weight: 450;
 }
 
 @media screen and (max-width: 1000px) {

@@ -11,7 +11,6 @@ export const Page = ({children}) => {
     }
 
     return ( <>
-      {console.log("from frontpage")}
       <Header handleToggleSidebar={handleToggleSidebar}/>
       <div class="container-app">
         <Sidebar sidebar={sidebar} handleToggleSidebar={handleToggleSidebar} />

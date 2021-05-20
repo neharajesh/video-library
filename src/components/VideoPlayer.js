@@ -2,14 +2,16 @@ import { useEffect } from "react";
 import ReactPlayer from "react-player";
 import { useParams } from "react-router"
 import { useLikedVideos } from "../context/liked-videos-context";
+import { useVideo } from "../context/video-context";
 import { useVideoHistory } from "../context/video-history-context";
-import { videoData } from "../data/videos"
 import { addToHistory } from "./Utilities/history-utilities";
 import { addToLikedVideos } from "./Utilities/liked-video-utilities";
+import { showNotification } from "./Utilities/toast";
 
 export const VideoPlayer = () => {
     const { videoId } = useParams();
-    const video = videoData.find(video => video.id === videoId);
+    const {videoList} = useVideo();
+    const video = videoList.find(video => video.videoId === videoId);
     const {videoHistoryList, setVideoHistoryList} = useVideoHistory();
     const {likedVideosList, setLikedVideosList} = useLikedVideos();
 
@@ -18,28 +20,26 @@ export const VideoPlayer = () => {
     //     setVideoHistoryList(updatedList);
     // }, [])    
 
-    const likedVideoHandler = () => {
-        const updatedLikedVideos = addToLikedVideos(videoId, likedVideosList);
-        console.log("updated liked videos - videoplayer")
-        console.log(updatedLikedVideos)
-        // setLikedVideosList(updatedLikedVideos);
-        // const 
-        setLikedVideosList()
+    const likedVideoHandler = (videoId, likedVideosList) => {
+        showNotification("Video Liked")
+        const updatedLikedVideos = addToLikedVideos(videoId, likedVideosList, videoList);
+        setLikedVideosList(updatedLikedVideos);
     }
 
     return (<>
         <div className="flex-col w-100 h-auto mg-l-2">
             <div className="w-100 flex mg-tb-1">
-                <img className="img-xs mg-t-1 mg-l-1 bdr-rad-round mg-r-1" src={video.channelImage} alt="❤" />
+                {/* <img className="img-xs mg-t-1 mg-l-1 bdr-rad-round mg-r-1" src={video.channelImage} alt="❤" /> */}
                 <div className="flex-col mg-l-1">
-                    <div className="txt-xl mg-tb-1">{video.name}</div>
+                    <div className="txt-xl mg-tb-1">{video.title}</div>
                     <p>Release Date: <span className="txt-700">{video.uploadDate}</span></p>
                     <p>Duration: <span className="txt-700">{video.duration}</span></p>
-                    <button onClick={() => likedVideoHandler}>Add to Liked Videos</button>
+                    <button onClick={() => likedVideoHandler(video.videoId, likedVideosList)}>Like Video</button>
                 </div> 
             </div>   
             <div className="h-100 w-100 flex-self-center">
-            <ReactPlayer width="90%" height="90%" url={`https://www.youtube.com/watch?v=${video.id}`}/></div>    
+            <ReactPlayer width="90%" height="90%" url={`https://www.youtube.com/watch?v=${video.videoId}`}/></div>    
+            <div id="notification-container"></div>
         </div>
     </>)
 }
