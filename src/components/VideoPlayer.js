@@ -13,14 +13,18 @@ export const VideoPlayer = () => {
     const {videoHistoryList, setVideoHistoryList} = useVideoHistory();
     const {likedVideosList, setLikedVideosList} = useLikedVideos();
 
-    useEffect(() => {
-        const updatedList = addToHistory(video, videoHistoryList);
-        setVideoHistoryList(updatedList);
-    }, [])    
+    // useEffect(() => {
+    //     const updatedList = addToHistory(video, videoHistoryList);
+    //     setVideoHistoryList(updatedList);
+    // }, [])    
 
     const likedVideoHandler = () => {
         const updatedLikedVideos = addToLikedVideos(videoId, likedVideosList);
-        setLikedVideosList(updatedLikedVideos);
+        console.log("updated liked videos - videoplayer")
+        console.log(updatedLikedVideos)
+        // setLikedVideosList(updatedLikedVideos);
+        // const 
+        setLikedVideosList()
     }
 
     return (<>
@@ -31,7 +35,7 @@ export const VideoPlayer = () => {
                     <div className="txt-xl mg-tb-1">{video.name}</div>
                     <p>Release Date: <span className="txt-700">{video.uploadDate}</span></p>
                     <p>Duration: <span className="txt-700">{video.duration}</span></p>
-                    <button onClick={likedVideoHandler}>Add to Liked Videos</button>
+                    <button onClick={() => likedVideoHandler}>Add to Liked Videos</button>
                 </div> 
             </div>   
             <div className="h-100 w-100 flex-self-center">

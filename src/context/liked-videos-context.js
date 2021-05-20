@@ -12,5 +12,6 @@ export const LikedVideosProvider = ({children}) => {
 }
 
 export const useLikedVideos = () => {
+    console.log("useLikedVideos is called")
     return useContext(LikedVideosContext);
 }

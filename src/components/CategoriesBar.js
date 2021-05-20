@@ -1,27 +1,54 @@
-import { useState } from "react";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { ROOT_URL } from "../config";
 import "../styles.css";
 
-const categories = [
-    "All", "Cats", "Dogs", "Sheep", "Llama", "Goats", "Cows", "Elephants", "Penguins", "Dolphins", "Whales", "Megalodons"
-]
-
 export const CategoriesBar = () => {
-    const [ activeElement, setActiveElement ] = useState("All");
-
-    const activeElementHandler = (value) => {
-        setActiveElement(value);
+  const [categories, setCategories] = useState([]);
+  const getAllCategories = async () => {
+    try {
+      const response = await axios.get(`${ROOT_URL}/categories`);
+      console.log(response.data.receivedData);
+      setCategories(response.data.receivedData);
+    } catch (err) {
+      console.log("Error occurred retrieving categories");
     }
-    return (
-        <>
-            <div className="container container-categories">
-                {categories.map((value, index) => 
-                <span className={activeElement === value ? "category category-active" : "category"}
-                    key={index}
-                    onClick={() => activeElementHandler(value)}
-                >
-                    {value}
-                </span>)}
-            </div>
-        </>
-    )
-}
+  };
+  useEffect(() => {
+      getAllCategories();
+  }, [setCategories]);
+
+  const [activeElement, setActiveElement] = useState("All");
+  const activeElementHandler = (value) => {
+    setActiveElement(value);
+  };
+  return (
+    <>
+      <div className="container container-categories">
+        <span
+          className={
+            activeElement === "All"
+              ? "category category-active"
+              : "category"
+          }
+          onClick={() => activeElementHandler("All")}
+        >
+          All
+        </span>
+        {categories.map((category) => (
+          <span
+            className={
+              activeElement === category.name
+                ? "category category-active"
+                : "category"
+            }
+            key={category._id}
+            onClick={() => activeElementHandler(category.name)}
+          >
+            <p>{category.name}</p>
+          </span>
+        ))}
+      </div>
+    </>
+  );
+};
