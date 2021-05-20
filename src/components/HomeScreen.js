@@ -1,16 +1,11 @@
-import moment from "moment";
 import { Link } from "react-router-dom";
 import { CategoriesBar } from ".";
 import { useVideo } from "../context/video-context";
 import "../styles.css"
+import { dateFormatter } from "./Utilities/date-utility";
 
 export const HomeScreen = ({sidebar}) => {
     const {videoList} = useVideo();
-
-    const dateFormatter = (date) => {
-        const formattedDate = moment(date).format("Do MMM, yyyy");
-        return formattedDate;
-    }
 
     return(<>
         <div className="container-homescreen">

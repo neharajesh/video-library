@@ -1,10 +1,8 @@
 export const addToHistory = (video, videoHistoryList) => {
-    // const existingVideo = videoHistoryList.find(current => current.videoId === videoId);
-    // if(!existingVideo) {
-    //     const currentVideo = videoList.find(video => video.videoId === videoId)
-    //     return [...videoHistoryList, currentVideo];
-    // }
-    // return videoHistoryList
+    const existingVideo = videoHistoryList.find(currentVideo => currentVideo.videoId === video.videoId)
+    if(existingVideo) {
+        return videoHistoryList
+    }
     const updatedHistory = [...videoHistoryList, video];
     return updatedHistory;
 }

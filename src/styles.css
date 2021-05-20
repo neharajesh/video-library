@@ -129,6 +129,12 @@ body {
     font-weight: 450;
 }
 
+.container-videoplayer {
+    height: 100%;
+    width: 100%;
+    min-width: 50rem;
+}
+
 @media screen and (max-width: 1000px) {
     .container-video {
         display: flex;
