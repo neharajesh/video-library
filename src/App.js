@@ -9,6 +9,7 @@ import { LoginScreen } from "./components";
 import { WatchLater } from "./components";
 import { History } from "./components";
 import { LikedVideos } from "./components";
+import { TopVideos } from "./components";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
       <Route path="/watchlater"><Page><WatchLater/></Page></Route>
       <Route path="/history"><Page><History /></Page></Route>
       <Route path="/liked"><Page><LikedVideos /></Page></Route>
+      <Route path="/top"><Page><TopVideos /></Page></Route>
     </Routes>
   );
 }

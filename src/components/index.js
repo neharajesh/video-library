@@ -9,5 +9,6 @@ import { LikedVideos } from "./Pages/LikedVideos";
 import { WatchLater } from "./Pages/WatchLater";
 import { LoginScreen } from "./Auth/LoginScreen";
 import { Register } from "./Auth/Register";
+import { TopVideos } from "./Pages/TopVideos";
 
-export { Page, VideoPlayer, HomeScreen, Sidebar, Header, CategoriesBar, History, LikedVideos, WatchLater, LoginScreen, Register }
+export { Page, VideoPlayer, HomeScreen, Sidebar, Header, CategoriesBar, History, LikedVideos, WatchLater, LoginScreen, Register, TopVideos }

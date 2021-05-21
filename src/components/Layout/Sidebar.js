@@ -14,9 +14,9 @@ export const Sidebar = ({sidebar, handleToggleSidebar}) => {
                 <NavLink exact to="/" className="nav-link" activeClassName="nav-active">
                     <RiHomeLine size={26} /> <span>Home</span>
                 </NavLink>
-                <li className="nav-link">
+                <NavLink to="/top" className="nav-link txt-deco-none txt-white" activeClassName="nav-active">
                     <GiFlamer size={26} /> <span>Top Videos</span>
-                </li>
+                </NavLink>
                 <NavLink to="/watchlater" className="nav-link txt-deco-none txt-white" activeClassName="nav-active">
                     <AiOutlineClockCircle size={26} /> <span>Watch Later</span>
                 </NavLink>
