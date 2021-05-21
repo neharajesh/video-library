@@ -66,6 +66,11 @@ body {
     cursor: pointer;
 }
 
+.container-inputs {
+    display: flex;
+    justify-content: space-between;
+}
+
 /* HOMESCREEN */
 .container-homescreen {
     width: 100%;

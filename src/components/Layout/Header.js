@@ -4,8 +4,10 @@ import { FcVideoProjector } from "react-icons/fc";
 import avatar from "../../images/avatar.jpg"
 import "./page.css"
 import { Link } from 'react-router-dom';
+import { useUser } from '../../context/user-context';
 
 export const Header = ({handleToggleSidebar}) => {
+    const { user } = useUser();
     return (<>
         <div className="container container-header">
             <FaBars className="header-hamburger" size={26} onClick={() => handleToggleSidebar()}/>
@@ -14,8 +16,10 @@ export const Header = ({handleToggleSidebar}) => {
                 <input type="text" placeholder="Search" />
                 <button type="submit"> <FiSearch size={22} /> </button>
             </form>
-            {/* <img className="img-40 bdr-rad-round" src={avatar} alt="avatar" /> */}
-            <Link to="/login">Login</Link>
+            {user.username === "" 
+                ? <Link className="nav-link txt-deco-none txt-white" to="/login">Login</Link> 
+                : <p>Hello, {user.name}</p>
+            }
         </div>
     </>)
 }

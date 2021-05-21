@@ -25,14 +25,7 @@ export const Sidebar = ({sidebar, handleToggleSidebar}) => {
                 </NavLink>
                 <NavLink to="/liked" className="nav-link txt-deco-none txt-white" activeClassName="nav-active">
                     <RiHeartFill size={26} /> <span>Liked Videos</span>
-                </NavLink>               
-
-                <hr />
-
-                <li className="nav-link">
-                    <BiLogOut size={26}/> <span>Logout</span>
-                </li>                
-
+                </NavLink>
             </nav>
         </div>
     </>)
