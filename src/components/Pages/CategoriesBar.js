@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { ROOT_URL } from "../config";
-import "../styles.css";
+import { ROOT_URL } from "../../config";
+import "../../styles.css";
 
 export const CategoriesBar = () => {
   const [categories, setCategories] = useState([]);
@@ -22,6 +22,13 @@ export const CategoriesBar = () => {
   const activeElementHandler = (value) => {
     setActiveElement(value);
   };
+
+  const sortByCategories = (categoryList, selectedCategory) => {
+    if(selectedCategory === "All") 
+      return categoryList;
+  }
+
+
   return (
     <>
       <div className="container container-categories">

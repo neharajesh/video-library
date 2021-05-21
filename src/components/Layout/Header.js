@@ -3,6 +3,7 @@ import { FiSearch } from "react-icons/fi";
 import { FcVideoProjector } from "react-icons/fc";
 import avatar from "../../images/avatar.jpg"
 import "./page.css"
+import { Link } from 'react-router-dom';
 
 export const Header = ({handleToggleSidebar}) => {
     return (<>
@@ -13,7 +14,8 @@ export const Header = ({handleToggleSidebar}) => {
                 <input type="text" placeholder="Search" />
                 <button type="submit"> <FiSearch size={22} /> </button>
             </form>
-            <img className="img-40 bdr-rad-round" src={avatar} alt="avatar" />
+            {/* <img className="img-40 bdr-rad-round" src={avatar} alt="avatar" /> */}
+            <Link to="/login">Login</Link>
         </div>
     </>)
 }

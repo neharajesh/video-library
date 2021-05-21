@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import ReactPlayer from "react-player";
 import { useParams } from "react-router";
-import { useLikedVideos } from "../context/liked-videos-context";
-import { useVideo } from "../context/video-context";
-import { useVideoHistory } from "../context/video-history-context";
-import { dateFormatter } from "./Utilities/date-utility";
-import { addToHistory } from "./Utilities/history-utilities";
-import { addToLikedVideos } from "./Utilities/liked-video-utilities";
-import { showNotification } from "./Utilities/toast";
+import { useLikedVideos } from "../../context/liked-videos-context";
+import { useVideo } from "../../context/video-context";
+import { useVideoHistory } from "../../context/video-history-context";
+import { dateFormatter } from "../Utilities/date-utility";
+import { addToHistory } from "../Utilities/history-utilities";
+import { addToLikedVideos } from "../Utilities/liked-video-utilities";
+import { showNotification } from "../Utilities/toast";
 
 export const VideoPlayer = () => {
   const { videoId } = useParams();
@@ -45,7 +45,7 @@ export const VideoPlayer = () => {
               Duration: <span className="txt-700">{video.duration}</span>
             </p>
             <button
-              className="pd-05 mg-05 bdr-thick bdr-yellow bdr-rad-m btn btn-secondary-yellow w-50"
+              className="pd-05 mg-05 bdr-thick bdr-yellow bdr-rad-m btn btn-secondary-yellow card-w-20"
               onClick={() => likedVideoHandler(video.videoId, likedVideosList)}
             >
               Like Video

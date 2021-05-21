@@ -11,7 +11,7 @@ export const VideoProvider = ({children}) => {
     const getVideos = async () => {
         try {
             const response = await axios.get(`${ROOT_URL}/videos`);
-            setVideoList(response.data.videos);
+            setVideoList(response.data.receivedData);
         } catch (err) {
             console.log("Error retriving videos from axios", err.message)
         }

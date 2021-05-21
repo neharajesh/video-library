@@ -1,13 +1,11 @@
 import "./page.css"
 import { RiHomeLine, RiHistoryLine, RiHeartFill } from "react-icons/ri"; 
-import { MdVideoLibrary } from "react-icons/md";
+import { AiOutlineClockCircle } from "react-icons/ai";
 import { GiFlamer } from "react-icons/gi";
 import { BiLogOut } from "react-icons/bi";
-import { useLogin } from "../Login/login-context";
 import { NavLink } from "react-router-dom";
 
 export const Sidebar = ({sidebar, handleToggleSidebar}) => {
-    const {setLogin} = useLogin();
     return(<>
         <div className="container-sidebar">
             <nav className={sidebar ? "sidebar open" : "sidebar"}
@@ -19,9 +17,9 @@ export const Sidebar = ({sidebar, handleToggleSidebar}) => {
                 <li className="nav-link">
                     <GiFlamer size={26} /> <span>Top Videos</span>
                 </li>
-                <li className="nav-link">
-                    <MdVideoLibrary size={26} /> <span>Library</span>
-                </li>
+                <NavLink to="/watchlater" className="nav-link txt-deco-none txt-white" activeClassName="nav-active">
+                    <AiOutlineClockCircle size={26} /> <span>Watch Later</span>
+                </NavLink>
                 <NavLink to="/history" className="nav-link txt-deco-none txt-white" activeClassName="nav-active">
                     <RiHistoryLine size={26} /> <span>History</span>
                 </NavLink>
@@ -32,7 +30,7 @@ export const Sidebar = ({sidebar, handleToggleSidebar}) => {
                 <hr />
 
                 <li className="nav-link">
-                    <BiLogOut size={26} onClick={() => setLogin(false)}/> <span>Logout</span>
+                    <BiLogOut size={26}/> <span>Logout</span>
                 </li>                
 
             </nav>
