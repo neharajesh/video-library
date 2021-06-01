@@ -1,7 +1,8 @@
 {
-  "name": "youtube-clone",
+  "name": "pet-tube-video-library",
   "version": "0.1.0",
   "private": true,
+  "author": "Neha Rajesh",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.10",
     "@testing-library/react": "^11.2.6",

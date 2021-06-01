@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { CategoriesBar } from "..";
+import { useCategories } from "../../context/categories-context";
 import { useVideo } from "../../context/video-context";
 import { useWatchLater } from "../../context/watch-later-context";
 import "../../styles.css";
@@ -7,9 +8,10 @@ import { dateFormatter } from "../Utilities/date-utility";
 import { showNotification } from "../Utilities/toast";
 import { addToWatchLater } from "../Utilities/watch-later-utilities"
 
-export const HomeScreen = ({ sidebar }) => {
+export const HomeScreen = () => {
   const { videoList } = useVideo();
   const { watchLaterList, setWatchLaterList } = useWatchLater();
+  const { categories } = useCategories();
 
   const watchLaterHandler = (videoId) => {
     showNotification("Added to Watch Later")
@@ -17,12 +19,26 @@ export const HomeScreen = ({ sidebar }) => {
     setWatchLaterList(updatedVideoList);
   }
 
+  const sortByCategories = () => {
+    if(!categories) {
+        return videoList;
+    } else if(categories === "All") {
+        return videoList
+    } else {
+        const sortedVideos = videoList.filter(video => video.tags.includes(categories))
+        console.log(sortedVideos)
+        return sortedVideos
+    }
+  }
+
+  const filteredVideos = sortByCategories()
+
   return (
     <>
       <div className="container-homescreen">
         <CategoriesBar />
         <div className="container-video flex flex-row-wrap">
-          {videoList.map((video) => (
+          {filteredVideos.map((video) => (
             <div
               key={video._id}
               className="video-card card-w-25 h-auto mg-l-1 csr-point txt-s pd-b-05 mg-tb-05 flex-col flex-col-space-evenly"

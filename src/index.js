@@ -8,19 +8,22 @@ import { VideoProvider } from "./context/video-context";
 import { LikedVideosProvider } from "./context/liked-videos-context";
 import { VideoHistoryProvider } from "./context/video-history-context";
 import { UserProvider } from "./context/user-context";
+import { CategoriesProvider } from "./context/categories-context";
 
 ReactDOM.render(
   <React.StrictMode>
     <Router>
       <UserProvider>
         <VideoProvider>
-          <VideoHistoryProvider>
-            <LikedVideosProvider>
-              <WatchLaterProvider>
-                <App />
-              </WatchLaterProvider>
-            </LikedVideosProvider>
-          </VideoHistoryProvider>
+          <CategoriesProvider>
+            <VideoHistoryProvider>
+              <LikedVideosProvider>
+                <WatchLaterProvider>
+                  <App />
+                </WatchLaterProvider>
+              </LikedVideosProvider>
+            </VideoHistoryProvider>
+          </CategoriesProvider>
         </VideoProvider>
       </UserProvider>
     </Router>
