@@ -68,8 +68,9 @@
     outline: none;
 }
 
-.header-form button {
-    padding: 0 1.25rem;
+.search-button {
+    text-decoration: none;
+    padding: 0.5rem;
     color: var(--color-text);
     background: transparent;
     border: none; 

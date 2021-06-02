@@ -9,6 +9,7 @@ import { LikedVideosProvider } from "./context/liked-videos-context";
 import { VideoHistoryProvider } from "./context/video-history-context";
 import { UserProvider } from "./context/user-context";
 import { CategoriesProvider } from "./context/categories-context";
+import { SearchProvider } from "./context/search-context";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -16,13 +17,15 @@ ReactDOM.render(
       <UserProvider>
         <VideoProvider>
           <CategoriesProvider>
-            <VideoHistoryProvider>
-              <LikedVideosProvider>
-                <WatchLaterProvider>
-                  <App />
-                </WatchLaterProvider>
-              </LikedVideosProvider>
-            </VideoHistoryProvider>
+            <SearchProvider>
+              <VideoHistoryProvider>
+                <LikedVideosProvider>
+                  <WatchLaterProvider>
+                    <App />
+                  </WatchLaterProvider>
+                </LikedVideosProvider>
+              </VideoHistoryProvider>
+            </SearchProvider>
           </CategoriesProvider>
         </VideoProvider>
       </UserProvider>
