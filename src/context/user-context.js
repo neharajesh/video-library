@@ -1,6 +1,6 @@
 import { createContext, useContext, useState } from "react";
 
-const initialUser = {
+export const initialUser = {
   username: "",
   password: "",
   name: "",
@@ -16,9 +16,9 @@ const UserContext = createContext();
 
 export const UserProvider = ({children}) => {
   const [user, setUser] = useState(initialUser);
-
+  const [token, setToken] = useState("");
   return (<>
-    <UserContext.Provider value={{user, setUser}}>
+    <UserContext.Provider value={{user, setUser, token, setToken}}>
       {children}
     </UserContext.Provider>
   </>)

@@ -2,7 +2,6 @@ import "./page.css"
 import { RiHomeLine, RiHistoryLine, RiHeartFill } from "react-icons/ri"; 
 import { AiOutlineClockCircle } from "react-icons/ai";
 import { GiFlamer } from "react-icons/gi";
-import { BiLogOut } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 
 export const Sidebar = ({sidebar, handleToggleSidebar}) => {

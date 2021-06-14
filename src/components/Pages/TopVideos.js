@@ -5,7 +5,7 @@ export const TopVideos = () => {
     const { videoList } = useVideo();
     return(<>
         <div className="container-video flex flex-row-wrap">
-            {videoList.filter(video => video.views > 1500000).map(video => <div className="video-card card-w-25 mg-l-1 csr-point txt-s pd-b-05 mg-tb-05 flex-col flex-col-space-evenly">
+            {videoList.filter(video => video.views > 1500000).map(video => <div key={video._id} className="video-card card-w-25 mg-l-1 csr-point txt-s pd-b-05 mg-tb-05 flex-col flex-col-space-evenly">
             <div className="video-top mg-b-05 card-h-10">
                 <img
                 className="w-100 h-auto"

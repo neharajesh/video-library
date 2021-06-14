@@ -2,17 +2,24 @@ import { FaBars } from 'react-icons/fa';
 import { FiSearch } from "react-icons/fi";
 import "./page.css"
 import { Link } from 'react-router-dom';
-import { useUser } from '../../context/user-context';
+import { initialUser, useUser } from '../../context/user-context';
 import { useSearch } from '../../context/search-context';
 
 export const Header = ({handleToggleSidebar}) => {
-    const { user } = useUser();
+    const { user, setUser } = useUser();
     const { setSearchString } = useSearch();
 
     const formSubmitHandler = (event) => {
         event.preventDefault();
         let params = event.target.value
         setSearchString(params);
+    }
+
+    const logoutHandler = () => {
+        console.log("logging out.")
+        setUser(initialUser)
+        localStorage.removeItem("user")
+        localStorage.removeItem("token")
     }
 
     return (<>
@@ -25,10 +32,13 @@ export const Header = ({handleToggleSidebar}) => {
                 <Link className="search-button" to="/search"> <FiSearch size={22} /> </Link>
             </form>
 
-            {user.username === "" 
-                ? <Link className="nav-link txt-deco-none txt-white" to="/login">Login</Link> 
-                : <p>Hello, {user.name}</p>
-            }
+            <div>
+                {user.name === "" 
+                    ? <Link className="nav-link txt-deco-none txt-white" to="/login">Login</Link> 
+                    : <p>Hello, {user.name}</p>
+                }
+                {user.name !== "" && <button onClick={() => logoutHandler()}> Logout </button>}
+            </div>
         </div>
     </>)
 }
