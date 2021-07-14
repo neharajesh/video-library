@@ -1,6 +1,6 @@
-import { Header } from ".";
-import { Sidebar } from ".";
-import "../styles.css"
+import { Header } from "./Header";
+import { Sidebar } from "./Sidebar";
+import "./page.css"
 import { useState } from "react";
 
 export const Page = ({children}) => {
@@ -11,7 +11,6 @@ export const Page = ({children}) => {
     }
 
     return ( <>
-      {console.log("from frontpage")}
       <Header handleToggleSidebar={handleToggleSidebar}/>
       <div class="container-app">
         <Sidebar sidebar={sidebar} handleToggleSidebar={handleToggleSidebar} />
