@@ -33,31 +33,33 @@ export const VideoPlayer = () => {
 
   return (
     <>
-      <div className="flex-col w-100 h-100 mg-l-2">
-        <div className="w-100 flex mg-tb-1">
+      <div className="video-page flex-col w-100 h-100 mg-l-2">
+        <div className="w-100 h-auto flex mg-tb-1">
           <div className="flex-col mg-l-1">
             <div className="txt-xl mg-tb-1">{video.title}</div>
-            <p>
-              Upload Date:{" "}
-              <span className="txt-700">{dateFormatter(video.uploadDate)}</span>
-            </p>
-            <p>
-              Duration: <span className="txt-700">{video.duration}</span>
-            </p>
-            <button
-              className="pd-05 mg-05 bdr-thick bdr-yellow bdr-rad-m btn btn-secondary-yellow card-w-20"
-              onClick={() => likedVideoHandler(video.videoId, likedVideosList)}
-            >
-              Like Video
-            </button>
           </div>
         </div>
-        <div className="container-videoplayer h-100 w-100">
-          <ReactPlayer
+        <div className="container-videoplayer">
+          <ReactPlayer className="react-player"
             width="100%"
-            height="100%"
+            height="60rem"
             url={`https://www.youtube.com/watch?v=${video.videoId}`}
           />
+        </div>
+        <div className="mg-1 w-100">
+            <p>
+                Upload Date:{"  "}
+                <span className="txt-700">{dateFormatter(video.uploadDate)}</span>
+            </p>
+            <p>
+                Duration: <span className="txt-700">{video.duration}</span>
+            </p>
+            <button
+                className="pd-05 mg-05 mg-t-2 bdr-thick bdr-yellow bdr-rad-m btn btn-secondary-yellow card-w-20"
+                onClick={() => likedVideoHandler(video.videoId, likedVideosList)}
+            >
+                Like Video
+            </button>
         </div>
         <div id="notification-container"></div>
       </div>

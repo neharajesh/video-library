@@ -1,10 +1,10 @@
 import { FcVideoProjector } from "react-icons/fc";
-import "../../styles.css"
+import "../../../styles.css"
 import { Link } from "react-router-dom";
 import { useState } from "react";
-import { useUser } from "../../context/user-context";
-import { loginRequest } from "../../api/AuthApi";
-import { showNotification } from "../Utilities/toast";
+import { useUser } from "../../../context/user-context";
+import { loginRequest } from "../../../api/AuthApi";
+import { showNotification } from "../../Utilities/toast";
 
 export const LoginScreen = () => {
     const {setUser, setToken} = useUser();

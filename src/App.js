@@ -1,6 +1,5 @@
 import "./styles.css"
 import { Route, Routes } from "react-router";
-
 import { Page } from "./components";
 import { HomeScreen } from "./components";
 import { VideoPlayer } from "./components";
@@ -10,7 +9,7 @@ import { WatchLater } from "./components";
 import { History } from "./components";
 import { LikedVideos } from "./components";
 import { TopVideos } from "./components";
-import { SearchResults } from "./components/Pages/SearchResults";
+import { SearchResults } from "./components";
 
 
 function App() {

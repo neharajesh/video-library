@@ -14,7 +14,7 @@ export const WatchLater = () => {
 
     return (<>
         <div className="container-video flex flex-row-wrap">
-            {watchLaterList.length === 0 && <h1>Add videos to Watch Later!</h1>}
+            {watchLaterList.length === 0 && <h1 className="mg-l-2 mg-1">Add videos to Watch Later!</h1>}
             {watchLaterList.map(watchLaterVideo => <div key={watchLaterVideo._id} className="video-card card-w-25 mg-l-1 csr-point txt-s pd-b-05 mg-tb-05 flex-col flex-col-space-evenly">
           <div className="video-top mg-b-05 card-h-10">
             <img

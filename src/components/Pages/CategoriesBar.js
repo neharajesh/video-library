@@ -1,6 +1,3 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { ROOT_URL } from "../../config";
 import { useCategories } from "../../context/categories-context";
 import "../../styles.css";
 
@@ -11,13 +8,8 @@ export const CategoriesBar = () => {
     <>
       <div className="container container-categories">
         <span
-          className={
-            categories === "All" ? "category category-active" : "category"
-          }
-          onClick={() => setCategories("All")}
-        >
-          All
-        </span>
+          className={categories === "All" ? "category category-active" : "category"}
+          onClick={() => setCategories("All")}> All </span>
         {allCategories.map((category) => (
           <span
             className={

@@ -3,9 +3,7 @@ import { useLikedVideos } from "../../context/liked-videos-context";
 import { removeFromLikedVideos } from "../Utilities/liked-video-utilities";
 import "../../styles.css";
 import { showNotification } from "../Utilities/toast";
-import { useEffect } from "react";
 import { useUser } from "../../context/user-context";
-import userEvent from "@testing-library/user-event";
 
 export const LikedVideos = () => {
   const { likedVideosList, setLikedVideosList } = useLikedVideos();
@@ -20,7 +18,10 @@ export const LikedVideos = () => {
   return (
     <>
       <div className="container-video flex flex-row-wrap">
-        {likedVideosList.length === 0 && <h1 class="txt-white">Add videos!</h1>}
+        <div className="mg-1 mg-l-2">
+            <h1 class="txt-white"> {likedVideosList.length === 0 && "Add videos!"} </h1>
+            <p> {user.username === "" && "Login to save data"}</p>
+        </div>
         {likedVideosList.map((likedVideo) => (
           <div className="video-card card-w-25 mg-l-1 csr-point txt-s pd-b-05 mg-tb-05 flex-col flex-col-space-evenly">
             <div className="video-top mg-b-05 card-h-10">
@@ -53,7 +54,7 @@ export const LikedVideos = () => {
         <div id="notification-container"></div>
       </div>
       <br />
-      <p> {user.username === "" && "Login to save data"}</p>
+      
     </>
   );
 };

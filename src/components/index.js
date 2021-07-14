@@ -7,8 +7,9 @@ import { Header } from "./Layout/Header";
 import { History } from "./Pages/History";
 import { LikedVideos } from "./Pages/LikedVideos";
 import { WatchLater } from "./Pages/WatchLater";
-import { LoginScreen } from "./Auth/LoginScreen";
-import { Register } from "./Auth/Register";
+import { LoginScreen } from "./Pages/Auth/LoginScreen";
+import { Register } from "./Pages/Auth/Register";
 import { TopVideos } from "./Pages/TopVideos";
+import { SearchResults } from "./Pages/SearchResults"
 
-export { Page, VideoPlayer, HomeScreen, Sidebar, Header, CategoriesBar, History, LikedVideos, WatchLater, LoginScreen, Register, TopVideos }
+export { Page, VideoPlayer, HomeScreen, Sidebar, Header, CategoriesBar, History, LikedVideos, WatchLater, LoginScreen, Register, TopVideos, SearchResults }

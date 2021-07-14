@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FcVideoProjector } from "react-icons/fc";
 import { Link } from "react-router-dom";
-import { registerRequest } from "../../api/AuthApi";
-import { showNotification } from "../Utilities/toast";
+import { registerRequest } from "../../../api/AuthApi";
+import { showNotification } from "../../Utilities/toast";
 
 export const Register = () => {
   const [name, setName] = useState("");

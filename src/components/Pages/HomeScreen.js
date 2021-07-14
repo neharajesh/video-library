@@ -1,24 +1,24 @@
-import { Link } from "react-router-dom";
 import { CategoriesBar } from "..";
 import { useCategories } from "../../context/categories-context";
 import { useVideo } from "../../context/video-context";
-import { useWatchLater } from "../../context/watch-later-context";
 import "../../styles.css";
+import { Link } from "react-router-dom"
 import { dateFormatter } from "../Utilities/date-utility";
 import { showNotification } from "../Utilities/toast";
 import { addToWatchLater } from "../Utilities/watch-later-utilities"
+import { useWatchLater } from "../../context/watch-later-context";
 
 export const HomeScreen = () => {
   const { videoList } = useVideo();
-  const { watchLaterList, setWatchLaterList } = useWatchLater();
   const { categories } = useCategories();
+    const { watchLaterList, setWatchLaterList } = useWatchLater();
 
-  const watchLaterHandler = (videoId) => {
-    showNotification("Added to Watch Later")
-    const updatedVideoList = addToWatchLater(videoId, watchLaterList, videoList);
-    setWatchLaterList(updatedVideoList);
-  }
-
+    const watchLaterHandler = (videoId) => {
+        showNotification("Added to Watch Later")
+        const updatedVideoList = addToWatchLater(videoId, watchLaterList, videoList);
+        setWatchLaterList(updatedVideoList);
+    }
+  
   const sortByCategories = () => {
     if(!categories) {
         return videoList;
@@ -55,9 +55,9 @@ export const HomeScreen = () => {
                 {video.title}
               </div>
               <div className="flex flex-items-center mg-tb-025 mg-l-05">
-                <span className="mg-025">👁 {video.views} views </span>
-                <span className="mg-025">
-                  ↗ {dateFormatter(video.uploadDate)}
+                <span className="mg-025">👀 {video.views} views </span>
+                <span className="mg-025 mg-l-1">
+                  🔼 {dateFormatter(video.uploadDate)}
                 </span>
               </div>
               <div className="flex flex-space-between">

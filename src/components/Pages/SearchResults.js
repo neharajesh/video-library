@@ -33,14 +33,13 @@ export const SearchResults = () => {
   return (
     <>
       <div className="w-100 h-auto">
-        <h1>Search Results Page</h1> <br />
-        <p>You searched for : {searchString}</p> <br />
-        <div container-video flex flex-row-wrap>
+        <h1 className="mg-l-2 mg-t-1">Search Results Page</h1> <br />
+        <div className="container-video flex flex-row-wrap mg-l-2">
           {results.length === 0
             ? "Results not found, try again"
             : `${results.length} hits found`}
         </div>
-        <div>
+        <div className="w-100 flex flex-row-wrap">
             {results.map(video => (
                 <div className="video-card card-w-25 mg-l-1 csr-point txt-s pd-b-05 mg-tb-05 flex-col flex-col-space-evenly">
                     <div className="video-top mg-b-05 card-h-10">
@@ -57,7 +56,7 @@ export const SearchResults = () => {
                         className="link-text txt-black txt-deco-none pd-05 mg-05 bdr-thick bdr-yellow bdr-rad-m btn btn-secondary-yellow w-100"
                         to={`/video/${video.videoId}`}
                     >
-                        Watch Again
+                        Watch
                     </Link>
                     </div>
                 </div>

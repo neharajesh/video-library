@@ -13,7 +13,7 @@ export const History = () => {
     }
 
     return(<div className="container-video flex flex-row-wrap">
-        {videoHistoryList.length === 0 && <h1>Watch videos!</h1>}
+        {videoHistoryList.length === 0 && <h1 className="mg-l-2 mg-1">Watch videos!</h1>}
         {videoHistoryList.map(video => (
             <div className="video-card card-w-25 mg-l-1 csr-point txt-s pd-b-05 mg-tb-05 flex-col flex-col-space-evenly">
                 <div className="video-top mg-b-05 card-h-10" >
